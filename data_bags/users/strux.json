@@ -1,0 +1,20 @@
+{
+  "groups": [
+    "sysadmin"
+    ],
+    "password":
+      "$1$sJijf6n8$lerkQTvPffOzzzoe1KA04.",
+    "ssh_keys": [
+      "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxP4JeJpPcC6Xa5yEbaw0MyLj8xX3h2e7axdGv+r9cVu8wBBvoVG3RQk+YPdOxfPtYkM1DuYGqoqTTkNmXlZAplnrWix0xsOiz15394aAar01ISRwTCrB3EO6xt14EAuRnWK4s6ThXuPwqLbY1G0stQhlXPvKJ3YZwCfIPYMbvloOSS5WIE7Uu8v8+J/YqV0tqwp7DuI0iSD5RlJsHEIH4FEfb3Bv3/VgLPsqt6EJPrrlDpK4jPSURGIT2P3oHUNuJcFIqSps9W/UJ1oqMjY4PGqPI0u0cTK1cuCImhdVOe4a2RijcoT/tRDPMmGDLB8vGsFGsIP0W/IRVE1AF/3OTw== ben@carnivorous.org"
+      ],
+    "id": "strux",
+    "homesick_castles": [
+    {
+      "name": "dotfiles",
+      "source":
+        "git://github.com/strux/dotfiles.git"
+    }
+  ],
+    "shell": "/bin/bash",
+    "email": "ben@carnivorous.org"
+}

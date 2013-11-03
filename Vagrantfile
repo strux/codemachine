@@ -15,48 +15,35 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Sinatra dev
   config.vm.network :forwarded_port, guest: 4567, host: 4567
 
-  # Create a private network, which allows host-only access to the machine
-  # using a specific IP.
-  # config.vm.network :private_network, ip: "192.168.33.10"
-
-  # Create a public network, which generally matched to bridged network.
-  # Bridged networks make the machine appear as another physical device on
-  # your network.
-  # config.vm.network :public_network
-
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
   config.vm.provision :chef_solo do |chef|
+    chef.data_bags_path = "data_bags"
+
     chef.add_recipe "apt"
+    chef.add_recipe "git"
     chef.add_recipe "vim"
     chef.add_recipe "tmux"
+    chef.add_recipe "solo-search"
 
-    # You may also specify custom JSON attributes:
-    # chef.json = { :mysql_password => "foo" }
+    # setup users (from data_bags/users/*.json)
+    chef.add_recipe "users::ruby_shadow" # necessary for password shadow support
+    chef.add_recipe "users::sysadmins" # creates users and sysadmin group
+    chef.add_recipe "users::sysadmin_sudo" # adds %sysadmin group to sudoers
+
+    # homesick_agent and its dependencies
+    chef.add_recipe "root_ssh_agent::ppid" # maintains agent during 'sudo su root'
+    chef.add_recipe "ssh_known_hosts" # populates /etc/ssh/ssh_known_hosts from data_bags/ssh_known_hosts/*.json
+    chef.add_recipe "homesick_agent::data_bag" # includes homesick::data_bag
+
+    chef.add_recipe "dev-env"
+
+    chef.json = {
+      :users => ['strux']
+    }
+
+    # chef.log_level = :debug
   end
-
-  # Enable provisioning with chef server, specifying the chef server URL,
-  # and the path to the validation key (relative to this Vagrantfile).
-  #
-  # The Opscode Platform uses HTTPS. Substitute your organization for
-  # ORGNAME in the URL and validation key.
-  #
-  # If you have your own Chef Server, use the appropriate URL, which may be
-  # HTTP instead of HTTPS depending on your configuration. Also change the
-  # validation key to validation.pem.
-  #
-  # config.vm.provision :chef_client do |chef|
-  #   chef.chef_server_url = "https://api.opscode.com/organizations/ORGNAME"
-  #   chef.validation_key_path = "ORGNAME-validator.pem"
-  # end
-  #
-  # If you're using the Opscode platform, your validator client is
-  # ORGNAME-validator, replacing ORGNAME with your organization name.
-  #
-  # If you have your own Chef Server, the default validation client name is
-  # chef-validator, unless you changed the configuration.
-  #
-  #   chef.validation_client_name = "ORGNAME-validator"
 end
