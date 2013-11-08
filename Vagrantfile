@@ -22,11 +22,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :chef_solo do |chef|
     chef.data_bags_path = "data_bags"
 
+    chef.add_recipe "solo-search"
     chef.add_recipe "apt"
     chef.add_recipe "git"
+    chef.add_recipe "curl"
     chef.add_recipe "vim"
+    chef.add_recipe "openssh"
+    chef.add_recipe "dev-env::spf13"
     chef.add_recipe "tmux"
-    chef.add_recipe "solo-search"
 
     # setup users (from data_bags/users/*.json)
     chef.add_recipe "users::ruby_shadow" # necessary for password shadow support
