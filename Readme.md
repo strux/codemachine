@@ -12,8 +12,10 @@ https://www.vagrantup.com/downloads
 git clone git@github.com:strux/dev-env.git
 cd dev-env
 
-# First time only
-vagrant box add hashicorp/precise32
+# Bring your ssh keys along for the ride
+ssh-add ~/.ssh/id_dsa
+# or maybe
+# ssh-add ~/.ssh/id_rsa
 
 vagrant up
 vagrant ssh
