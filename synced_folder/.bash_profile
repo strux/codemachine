@@ -1,4 +1,4 @@
-PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
+PS1='\e[0;31m[\e[0m\u@\h \W$(__git_ps1 " (%s)")\e[0;31m]\e[0m\$ '
 
 export TERM=xterm-256color
 export LC_ALL=en_US.utf-8
