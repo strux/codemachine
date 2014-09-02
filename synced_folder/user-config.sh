@@ -30,12 +30,16 @@ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-buil
 source ~/.provisioned_bash_profile
 
 # Install common rubies
-rbenv install 1.9.3-p547
-rbenv install 2.1.2
-rbenv rehash
+for ruby in 1.9.3-p547 2.1.2
+do
+  rbenv install ${ruby}
+  rbenv rehash
+  rbenv global ${ruby}
+  # Bundler
+  gem install bundler
+  rbenv rehash
+done
 
-# Set default ruby
-rbenv global 2.1.2
 
 # Hub
 git clone git://github.com/github/hub.git
