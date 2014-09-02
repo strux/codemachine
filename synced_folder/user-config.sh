@@ -11,10 +11,6 @@ set -x
 for f in ~/synced_folder/.*; do [ -f $f ] && ln -s $f ~/$(basename $f); done
 
 # Git config
-#ssh-keygen -t rsa -C "ben@carnivorous.org"
-#ssh -T git@github.com
-git config --global user.name "strux"
-git config --global user.email ben@carnivorous.org
 git config --global core.editor vim
 git config --global color.diff auto
 git config --global color.status auto
