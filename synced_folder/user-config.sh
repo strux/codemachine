@@ -17,6 +17,7 @@ git config --global core.editor vim
 git config --global color.diff auto
 git config --global color.status auto
 git config --global color.branch auto
+git config --global push.default current
 git config --global color.status.changed yellow
 git config --global color.status.added green
 git config --global color.status.untracked red
