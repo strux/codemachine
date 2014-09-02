@@ -5,17 +5,17 @@ set ts=2 sts=2 sw=2 expandtab
 set diffopt=vertical
 set clipboard=unnamed
 set autoread
-set updatetime=5000  " millisecond"
+set updatetime=5000  " millisecond
 set modelines=1
 
 let mapleader = ","
 nmap <leader>v :tabedit ~/.vimrc.local<CR>
 map <Leader>d :NERDTreeToggle<CR>
-map <leader>D :NERDTree 
+map <leader>D :NERDTree
 map <Leader>r <ESC>:w<CR>:!ruby "%"<CR>
 map <Leader>b <ESC>:w<CR>:!bash "%"<CR>
 map <Leader>j :join<CR>
-map <Leader>db <ESC>orequire 'debugger';debugger<ESC>
+map <Leader>rg <ESC>orequire 'debugger';debugger<ESC>
 
 " NERDTree
 let NERDTreeIgnore = ['\.DS_Store', '\.idea', '\.git']
@@ -32,10 +32,10 @@ map <C-h> gT
 map <C-n> <Esc>:tabnew<CR>
 
 " Windows
-map <S-k> <C-w><Up> 
-map <S-j> <C-w><Down> 
-map <S-h> <C-w><Left> 
-map <S-l> <C-w><Right> 
+map <S-k> <C-w><Up>
+map <S-j> <C-w><Down>
+map <S-h> <C-w><Left>
+map <S-l> <C-w><Right>
 
 " Window sizing with ALT+hjkl
 map ¬ :vertical resize +5<CR>
@@ -43,12 +43,8 @@ map ˙ :vertical resize -5<CR>
 map ˚ :resize +5<CR>
 map ∆ :resize -5<CR>
 
-" Solarized"
-set t_Co=256
+" Solarized
 syntax enable
 set background=dark
-let g:solarized_visibility = "normal"
-let g:solarized_termcolors=256
-let g:solarized_contrast = "normal"
+let g:solarized_termcolors=16
 colorscheme solarized
-"highlight LineNr ctermfg=grey16 ctermbg=grey
