@@ -1,3 +1,6 @@
+# Scripted Configurations
+source ~/.provisioned_bash_profile
+
 PS1='\e[0;31m[\e[0m\u@\h \W$(__git_ps1 " (%s)")\e[0;31m]\e[0m\$ '
 
 export TERM=xterm-256color
@@ -13,7 +16,7 @@ alias lla='ls -ahl'
 alias v=vagrant
 
 # Git / Hub
-source ~/.git-completion.sh
+source ~/.git-completion.bash
 source ~/.git-prompt.sh
 eval "$(hub alias -s)"
 
@@ -41,5 +44,3 @@ advHealth() {
   curl $url | jshon
 }
 alias sshealth=advHealth
-
-# Scripted Configurations
