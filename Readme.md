@@ -18,3 +18,7 @@ vagrant box add hashicorp/precise32
 vagrant up
 vagrant ssh
 ```
+
+## Solarized ##
+If you'd like to have terminal vim play nice with solarized on OS X Terminal.app I highly recommend using the Terminal.app theme found here: 
+https://github.com/tomislav/osx-terminal.app-colors-solarized
