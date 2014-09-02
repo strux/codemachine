@@ -2,6 +2,6 @@
 
 apt-get update
 apt-get install -y build-essential libreadline-dev libssl-dev zlib1g-dev libxml2-dev libxslt-dev
-apt-get install -y curl wget unzip git git-core vim tmux ruby
+apt-get install -y curl wget unzip git git-core vim tmux ruby nodejs
 
 su -c "source /vagrant/synced_folder/user-config.sh" vagrant
