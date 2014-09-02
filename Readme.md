@@ -3,7 +3,7 @@
 Install VirtualBox
 https://www.virtualbox.org/wiki/Downloads
 
-Install vagrant
+Install Vagrant
 https://www.vagrantup.com/downloads
 
 ## Running the environment ##
