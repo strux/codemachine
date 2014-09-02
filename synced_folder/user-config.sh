@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # TODO:
-# remove hard coded user.name in favor of prompting script
+# Configuration script
 # clone top 5 repos
 
 set -x
@@ -34,7 +34,7 @@ echo "install: --no-ri --no-rdoc" >> ~/.gemrc
 echo "update: --no-ri --no-rdoc" >> ~/.gemrc
 
 # Install common rubies
-for ruby in 1.9.3-p547 2.1.2
+for ruby in 1.9.3-p448 2.1.2
 do
   rbenv install ${ruby}
   rbenv rehash
@@ -44,7 +44,6 @@ do
   gem install gem update debugger-ruby_core_source
   rbenv rehash
 done
-
 
 # Hub
 git clone git://github.com/github/hub.git
