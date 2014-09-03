@@ -9,13 +9,19 @@ set updatetime=5000  " millisecond
 set modelines=1
 
 let mapleader = ","
+" vim
 nmap <leader>v :tabedit ~/.vimrc.local<CR>
+map <Leader>j :join<CR>
+" NERDTree
 map <Leader>d :NERDTreeToggle<CR>
 map <leader>D :NERDTree
-map <Leader>r <ESC>:w<CR>:!ruby "%"<CR>
+" Bas"
 map <Leader>b <ESC>:w<CR>:!bash "%"<CR>
-map <Leader>j :join<CR>
+" Ruby
+map <Leader>r <ESC>:w<CR>:!ruby "%"<CR>
 map <Leader>rg <ESC>orequire 'debugger';debugger<ESC>
+" Git/Hub
+map <Leader>gr <ESC>:! hub pull-request<CR>
 
 " NERDTree
 let NERDTreeIgnore = ['\.DS_Store', '\.idea', '\.git']
