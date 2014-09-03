@@ -17,16 +17,6 @@ wget -O ~/.hub.bash_completion.sh ${hub_completion}hub.bash_completion.sh
 # Dev area
 mkdir ~/development
 
-# Git config
-git config --global core.editor vim
-git config --global color.diff auto
-git config --global color.status auto
-git config --global color.branch auto
-git config --global color.status.changed yellow
-git config --global color.status.added green
-git config --global color.status.untracked red
-git config --global push.default current
-
 # rbenv
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.provisioned_bash_profile
