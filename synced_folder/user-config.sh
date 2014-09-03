@@ -47,7 +47,7 @@ do
   rbenv global ${ruby}
   # Bundler
   gem install bundler
-  gem install gem update debugger-ruby_core_source
+  gem install debugger-ruby_core_source
   rbenv rehash
 done
 
