@@ -12,6 +12,7 @@ dev-env-a-box is a Vagrant VM that is fully configured for (ruby/web) developmen
 1. Port forwarding for common dev ports (3000,3030,4567,etc)
 1. Javascript runtime (nodejs)
 1. Common build tools installed
+1. Custom prompt to remind you your in a VM
 1. lots more...
 
 ## Prerequisites ##
