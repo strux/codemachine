@@ -10,7 +10,7 @@ fi
 # Scripted Configurations
 source ~/.provisioned_bash_profile
 
-PS1=$'\e[1;31m|\e[0m\u\e[1;31m\u2318\e[0m \h \W$(__git_ps1 " (%s)")\e[1;31m|\e[0m \u2219 '
+PS1=$'\e[40m[\h \W$(__git_ps1 " (%s)")]\e[0m \e[0;37m$\e[0m '
 
 export TERM=xterm-256color
 export LC_ALL=en_US.utf-8
