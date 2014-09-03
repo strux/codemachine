@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# TODO:
-# Configuration script
-# clone top 5 repos
-
 set -x
 
 # Dot files
@@ -14,8 +10,8 @@ wget -O ~/.git-prompt.sh ${git_completion}git-prompt.sh
 hub_completion=https://raw.githubusercontent.com/github/hub/master/etc/
 wget -O ~/.hub.bash_completion.sh ${hub_completion}hub.bash_completion.sh
 
-# Dev area
-mkdir ~/development
+# Local config
+for f in ~/synced_folder/local_config/*; do ln -s $f ~/$(basename $f); done
 
 # rbenv
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv

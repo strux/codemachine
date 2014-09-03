@@ -1,5 +1,5 @@
 # Set user variables
-USER_ENV_FILE=~/synced_folder/user-env.sh
+USER_ENV_FILE=~/.user-env.sh
 if [[ $- == *i* ]]; then # if interactive shell
   if [[ ! -f $USER_ENV_FILE ]]; then # no var file
     source ~/synced_folder/first-run-setup.sh
@@ -52,7 +52,9 @@ alias be='bundle exec'
 
 # Stackato
 alias stk='stackato'
-alias stkl="stackato login ${CM_STACKATO_EMAIL} --password ${CM_STACKATO_PASS}"
+if [[ -n ${CM_STACKATO_EMAIL} && -n ${CM_STACKATO_PASS} ]]; then
+  alias stkl="stackato login ${CM_STACKATO_EMAIL} --password ${CM_STACKATO_PASS}"
+fi
 
 # Expects an argument in the form of: magic1.dis OR se2.mtn
 ss() {
