@@ -8,6 +8,7 @@ Codemachine is a Vagrant VM that is fully configured for (ruby/web) development.
 1. Solarized theme configured for vim and OS X Terminal.app
 1. Common ruby version installed with rbenv
 1. git installed with helpful defaults
+1. Git branch shown in prompt (git-prompt.sh)
 1. hub installed with tab completion and git alias
 1. Port forwarding for common dev ports (3000,3030,4567,etc)
 1. Javascript runtime (nodejs)
