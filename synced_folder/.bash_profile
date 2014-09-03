@@ -1,3 +1,12 @@
+# Set user variables
+USER_ENV_FILE=~/synced_folder/user-env.sh
+if [[ $- == *i* ]]; then # if interactive shell
+  if [[ ! -f $USER_ENV_FILE ]]; then # no var file
+    source ~/synced_folder/first-run-setup.sh
+  fi
+fi
+[[ -f $USER_ENV_FILE ]] && source $USER_ENV_FILE
+
 # Scripted Configurations
 source ~/.provisioned_bash_profile
 
@@ -22,6 +31,9 @@ eval "$(hub alias -s)"
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
 source ~/.hub.bash_completion.sh
+git config --global user.name "${CM_GIT_USER_NAME}"
+git config --global user.email ${CM_GIT_USER_EMAIL}
+# CM_GIT_USER_NAME
 
 # Rspec
 alias rspec='rspec --color'
@@ -32,6 +44,7 @@ alias be='bundle exec'
 
 # Stackato
 alias stk='stackato'
+alias stkl="stackato login ${CM_STACKATO_EMAIL} --password ${CM_STACKATO_PASS}"
 
 # Expects an argument in the form of: magic1.dis OR se2.mtn
 ss() {

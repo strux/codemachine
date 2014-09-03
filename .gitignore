@@ -1,2 +1,3 @@
 .vagrant/machines
 .cache
+synced_folder/user-env.sh
