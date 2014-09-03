@@ -1,10 +1,12 @@
 # Scripted Configurations
 source ~/.provisioned_bash_profile
 
-PS1='\e[0;31m[\e[0m\u@\h \W$(__git_ps1 " (%s)")\e[0;31m]\e[0m\$ '
+PS1=$'\e[1;31m|\e[0m\u\e[1;31m\u2318\e[0m \h \W$(__git_ps1 " (%s)")\e[1;31m|\e[0m \u2219 '
 
 export TERM=xterm-256color
 export LC_ALL=en_US.utf-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
 
