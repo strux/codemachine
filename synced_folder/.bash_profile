@@ -16,9 +16,10 @@ alias lla='ls -ahl'
 alias v=vagrant
 
 # Git / Hub
+eval "$(hub alias -s)"
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
-eval "$(hub alias -s)"
+source ~/.hub.bash_completion.sh
 
 # Rspec
 alias rspec='rspec --color'

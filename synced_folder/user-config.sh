@@ -8,6 +8,11 @@ set -x
 
 # Dot files
 for f in ~/synced_folder/.*; do [ -f $f ] && ln -s $f ~/$(basename $f); done
+git_completion=https://raw.githubusercontent.com/git/git/master/contrib/completion/
+wget -O ~/.git-completion.bash ${git_completion}git-completion.bash
+wget -O ~/.git-prompt.sh ${git_completion}git-prompt.sh
+hub_completion=https://raw.githubusercontent.com/github/hub/master/etc/
+wget -O ~/.hub.bash_completion.sh ${hub_completion}hub.bash_completion.sh
 
 # Dev area
 mkdir ~/development
