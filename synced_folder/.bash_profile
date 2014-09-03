@@ -33,15 +33,12 @@ source ~/.git-prompt.sh
 source ~/.hub.bash_completion.sh
 [ -n ${CM_GIT_USER_NAME} ] && git config --global user.name "${CM_GIT_USER_NAME}"
 [ -n ${CM_GIT_USER_EMAIL} ] && git config --global user.email ${CM_GIT_USER_EMAIL}
-git config --global core.editor vim
-git config --global color.diff auto
-git config --global color.status auto
-git config --global color.branch auto
-git config --global color.status.changed yellow
-git config --global color.status.added green
-git config --global color.status.untracked red
-git config --global push.default current
 alias g='git'
+
+# Enable tab completion for `g` by marking it as an alias for `git`
+if type _git &> /dev/null && [ -f ~/.git-completion.bash ]; then
+  complete -o default -o nospace -F _git g;
+fi
 
 # Rspec
 alias rspec='rspec --color'

@@ -1,0 +1,33 @@
+[alias]
+  br = branch
+  ca = commit --amend
+  ci = commit
+  cp = cherry-pick
+  co = checkout
+  fp = fetch --prune
+  mf = merge --ff-only
+  mnf = merge --no-ff
+  pf = pull --ff-only
+  rb = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbi = rebase --interactive
+  st = status
+  pr = pull-request
+  rh = reset --hard
+  # text-mode commit graph
+  lol = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%cr)%C(reset) %C(white)%s%C(reset) %C(bold white)— %cn%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+  # eg: cd $(git root)
+  root = rev-parse --show-toplevel
+[core]
+  editor = vim
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[color "status"]
+  changed = yellow
+  added = green
+  untracked = red
+[push]
+  default = current
