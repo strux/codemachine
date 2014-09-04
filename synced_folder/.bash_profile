@@ -10,14 +10,14 @@ fi
 # Scripted Configurations
 source ~/.provisioned_bash_profile
 
-PS1=$'\e[0;33m\u2605\e[0m \e[40m[\h \W$(__git_ps1 " (%s)")]\e[0m \e[0;37m$\e[0m '
-
 export TERM=xterm-256color
 export LC_ALL=en_US.utf-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
+
+PS1=$'\e[0;33m\u2605\e[0m \e[40m[\h \W$(__git_ps1 " (%s)")]\e[0m \e[0;37m$\e[0m '
 
 alias ll='ls -lh'
 alias la='ls -ah'
