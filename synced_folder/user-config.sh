@@ -21,10 +21,6 @@ mkdir ~/.rbenv/plugins
 git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 source ~/.provisioned_bash_profile
 
-# Skip gem documentation
-echo "install: --no-ri --no-rdoc" >> ~/.gemrc
-echo "update: --no-ri --no-rdoc" >> ~/.gemrc
-
 # Install common rubies
 for ruby in 1.9.3-p448 2.1.2
 do
