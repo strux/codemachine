@@ -1,6 +1,13 @@
-target_file=~/synced_folder/local_config/.user-env.sh
+target_file=~/synced_folder/local_config/dotfiles/.user-env.sh
 
-# Make it green
+function cleanup {
+  # Reset colors
+  tput sgr 0
+  exit $?
+}
+trap cleanup SIGINT
+
+# Make text green to grab attention
 tput setaf 2
 echo
 echo "It looks like this is your first time using codemachine"
@@ -19,5 +26,4 @@ done
 [ -n ${target_file} ] && ln -s ${target_file} ~/$(basename $target_file)
 
 echo "You can change these values anytime in: ~/.user-env.sh"
-# Reset colors
-tput sgr 0
+cleanup
