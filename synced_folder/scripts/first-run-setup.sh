@@ -1,4 +1,4 @@
-target_file=~/synced_folder/local_config/dotfiles/.user-env.sh
+target_file=~/synced_folder/local_config/user-env.sh
 
 function cleanup {
   # Reset colors
@@ -14,7 +14,7 @@ echo "It looks like this is your first time using codemachine"
 echo "Let's collect some info to help set up your env."
 echo
 
-user_vars=$(find ~/synced_folder/ -maxdepth 1 -type f -exec grep -o 'CM_[_A-Z]\+' {} + | cut -d : -f 2 | sort | uniq)
+user_vars=$(find ~/synced_folder/ -maxdepth 2 -type f -exec grep -o 'CM_[_A-Z]\+' {} + | cut -d : -f 2 | sort | uniq)
 for var in $user_vars
 do
   human=$(echo ${var} | sed 's/\(CM\)\?_/ /g')
@@ -23,7 +23,6 @@ do
   read $var_name
   echo "export ${var}=${!var_name}" >> ${target_file}
 done
-[ -n ${target_file} ] && ln -s ${target_file} ~/$(basename $target_file)
+echo "You can change these values anytime in: ~/synced_folder/local_config/user-env.sh"
 
-echo "You can change these values anytime in: ~/.user-env.sh"
 cleanup
