@@ -20,14 +20,20 @@ alias ll='ls -lh'
 alias la='ls -ah'
 alias lla='ls -ahl'
 
+############################################################
 # Vagrant
+############################################################
 alias v=vagrant
 
+############################################################
 # rbenv
+############################################################
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+############################################################
 # Git / Hub
+############################################################
 eval "$(hub alias -s)"
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
@@ -41,14 +47,20 @@ if type _git &> /dev/null && [ -f ~/.git-completion.bash ]; then
   complete -o default -o nospace -F _git g;
 fi
 
+############################################################
 # Rspec
+############################################################
 alias rspec='rspec --color'
 
+############################################################
 # Bundler
+############################################################
 alias b='bundle'
 alias be='bundle exec'
 
+############################################################
 # Stackato
+############################################################
 alias stk='stackato'
 if [[ -n ${CM_STACKATO_EMAIL} && -n ${CM_STACKATO_PASS} ]]; then
   alias stkl="stackato login ${CM_STACKATO_EMAIL} --password ${CM_STACKATO_PASS}"
