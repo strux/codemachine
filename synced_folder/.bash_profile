@@ -7,9 +7,6 @@ if [[ $- == *i* ]]; then # if interactive shell
 fi
 [[ -f $USER_ENV_FILE ]] && source $USER_ENV_FILE
 
-# Scripted Configurations
-source ~/.provisioned_bash_profile
-
 export TERM=xterm-256color
 export LC_ALL=en_US.utf-8
 export LANG=en_US.UTF-8
@@ -25,6 +22,10 @@ alias lla='ls -ahl'
 
 # Vagrant
 alias v=vagrant
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # Git / Hub
 eval "$(hub alias -s)"

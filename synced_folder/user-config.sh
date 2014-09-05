@@ -4,6 +4,7 @@ set -x
 
 # Dot files
 for f in ~/synced_folder/.*; do [ -f $f ] && ln -s $f ~/$(basename $f); done
+# Auto completion
 git_completion=https://raw.githubusercontent.com/git/git/master/contrib/completion/
 wget -O ~/.git-completion.bash ${git_completion}git-completion.bash
 wget -O ~/.git-prompt.sh ${git_completion}git-prompt.sh
@@ -15,11 +16,10 @@ for f in ~/synced_folder/local_config/*; do ln -s $f ~/$(basename $f); done
 
 # rbenv
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.provisioned_bash_profile
-echo 'eval "$(rbenv init -)"' >> ~/.provisioned_bash_profile
 mkdir ~/.rbenv/plugins
 git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-source ~/.provisioned_bash_profile
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # Install common rubies
 for ruby in 1.9.3-p448 2.1.2
