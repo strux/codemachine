@@ -2,13 +2,12 @@
 # First run setup
 ################################################################################
 USER_ENV_FILE=~/synced_folder/local_config/user-env.sh
-if [[ ! -f $USER_ENV_FILE ]]; then # no var file
-  if [[ $- == *i* ]]; then # if interactive shell
+if [[ $- == *i* ]]; then # if interactive shell
+  if [[ ! -f $USER_ENV_FILE ]]; then # no var file
     bash ~/synced_folder/scripts/first-run.sh
   fi
-else
-  source $USER_ENV_FILE
 fi
+[[ -f $USER_ENV_FILE ]] && source $USER_ENV_FILE
 
 export TERM=xterm-256color
 export LC_ALL=en_US.utf-8
