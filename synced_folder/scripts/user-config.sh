@@ -8,6 +8,11 @@ set -x
 for f in ~/synced_folder/global_config/.*; do [ -f $f ] && ln -s $f ~/$(basename $f); done
 
 ################################################################################
+# Persisted directories
+################################################################################
+for f in ~/synced_folder/local_config/*; do [ -d $f ] && ln -s $f ~/$(basename $f); done
+
+################################################################################
 # Code directory
 ################################################################################
 ln -s ~/synced_folder/local_config/code ~/code
