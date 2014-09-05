@@ -4,7 +4,7 @@
 USER_ENV_FILE=~/synced_folder/local_config/user-env.sh
 if [[ ! -f $USER_ENV_FILE ]]; then # no var file
   if [[ $- == *i* ]]; then # if interactive shell
-    source ~/synced_folder/scripts/first-run-setup.sh
+    bash ~/synced_folder/scripts/first-run.sh
   fi
 else
   source $USER_ENV_FILE

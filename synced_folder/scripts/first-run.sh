@@ -24,5 +24,6 @@ do
   echo "export ${var}=${!var_name}" >> ${target_file}
 done
 echo "You can change these values anytime in: ~/synced_folder/local_config/user-env.sh"
+echo "Make sure to source .bash_profile afterwards."
 
 cleanup
