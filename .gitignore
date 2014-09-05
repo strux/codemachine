@@ -1,3 +1,4 @@
 .vagrant/machines
 .cache
 synced_folder/local_config/*
+!synced_folder/local_config/code
