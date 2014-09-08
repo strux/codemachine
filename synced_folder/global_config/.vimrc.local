@@ -11,6 +11,7 @@ set modelines=1
 let mapleader = ","
 " vim
 nmap <leader>v :tabedit ~/.vimrc.local<CR>
+nmap <leader>n :set invnumber<CR>
 map <Leader>j :join<CR>
 " NERDTree
 map <Leader>d :NERDTreeToggle<CR>
