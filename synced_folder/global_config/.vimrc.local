@@ -16,13 +16,15 @@ map <Leader>j :join<CR>
 " NERDTree
 map <Leader>d :NERDTreeToggle<CR>
 map <leader>D :NERDTree
-" Bas"
+" Bash"
 map <Leader>b <ESC>:w<CR>:!bash "%"<CR>
 " Ruby
 map <Leader>r <ESC>:w<CR>:!ruby "%"<CR>
 map <Leader>rg <ESC>orequire 'debugger';debugger<ESC>
 " Git/Hub
 map <Leader>gr <ESC>:! hub pull-request<CR>
+" Tabularize
+map <Leader>as <ESC>:Tabularize /[^,]\+,<CR>
 
 " NERDTree
 let NERDTreeIgnore = ['\.DS_Store', '\.idea', '\.git']
