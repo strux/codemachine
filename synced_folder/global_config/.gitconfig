@@ -5,9 +5,11 @@
   cp = cherry-pick
   co = checkout
   fp = fetch --prune
+  fu = fetch upstream
   mf = merge --ff-only
   mnf = merge --no-ff
   pf = pull --ff-only
+  pu = push
   rb = rebase
   rba = rebase --abort
   rbc = rebase --continue
