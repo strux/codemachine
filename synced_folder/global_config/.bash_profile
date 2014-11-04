@@ -64,6 +64,7 @@ alias be='bundle exec'
 # Stackato
 ################################################################################
 alias stk='stackato'
+alias s='stackato'
 if [[ -n ${CM_STACKATO_EMAIL} && -n ${CM_STACKATO_PASS} ]]; then
   alias stkl="stackato login ${CM_STACKATO_EMAIL} --password ${CM_STACKATO_PASS}"
 fi
@@ -82,3 +83,16 @@ advHealth() {
   curl $url | jshon
 }
 alias sshealth=advHealth
+
+# Stackato v3
+# Usage: sl ship.org
+sl() {
+  stackato target https://api.paasv2.$1.mtnsatcloud.com --space ${CM_STACKATO_V3_SPACE} --organization ${CM_STACKATO_V3_ORG}
+  stackato login ${CM_STACKATO_V3_USER} --passwd ${CM_STACKATO_V3_PASS}
+}
+alias sl=sl
+
+alias sea1='sl sea1.mtn'
+alias sea2='sl sea2.mtn'
+alias sob='sl spiritofbritain1.pof'
+alias sof='sl spiritoffrance1.pof'
