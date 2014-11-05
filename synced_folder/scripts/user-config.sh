@@ -54,6 +54,7 @@ done
 ################################################################################
 git clone git://github.com/github/hub.git
 cd hub
+git checkout origin/1.12-stable
 sudo rake install
 cd ..
 rm -rf hub
