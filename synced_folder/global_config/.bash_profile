@@ -63,19 +63,40 @@ alias be='bundle exec'
 ################################################################################
 # Stackato
 ################################################################################
-alias stk='stackato'
 alias s='stackato'
-if [[ -n ${CM_STACKATO_EMAIL} && -n ${CM_STACKATO_PASS} ]]; then
-  alias stkl="stackato login ${CM_STACKATO_EMAIL} --password ${CM_STACKATO_PASS}"
-fi
 
-# Expects an argument in the form of: magic1.dis OR se2.mtn
-ss() {
-  stk target https://api.paas.$1.mtnsatcloud.com
-  stkl
-  stk apps
+# Stackato v2
+# Usage: slv2 ship.org
+slv2() {
+  stackato target https://api.paas.$1.mtnsatcloud.com
+  stackato login ${CM_STACKATO_EMAIL} --password ${CM_STACKATO_PASS}
 }
-alias ss=ss
+alias slv2=slv2
+
+# Stackato v3
+# Usage: slv3 ship.org
+slv3() {
+  stackato target https://api.paasv2.$1.mtnsatcloud.com --space ${CM_STACKATO_V3_SPACE} --organization ${CM_STACKATO_V3_ORG}
+  stackato login ${CM_STACKATO_V3_USER} --passwd ${CM_STACKATO_V3_PASS}
+}
+alias slv3=slv3
+
+alias central='slv2 central.mtn'
+alias sea1v2='slv2 sea1.mtn'
+alias mia1='slv2 mia1.mtn'
+alias mia2='slv2 mia2.mtn'
+alias magic='slv2 magic1.dis'
+alias dream='slv2 dream1.dis'
+alias wonder='slv2 wonder1.dis'
+alias fantasy='slv2 fantasy1.dis'
+alias breakaway='slv2 breakaway1.ncl'
+
+alias sea1='slv3 sea1.mtn'
+alias sea2='slv3 sea2.mtn'
+alias sob='slv3 spiritofbritain1.pof'
+alias sof='slv3 spiritoffrance1.pof'
+alias pok='slv3 prideofkent1.pof'
+alias pob='slv3 prideofburgundy1.pof'
 
 # Expects an argument in the form of: magic1.dis OR se2.mtn
 advHealth() {
@@ -84,17 +105,4 @@ advHealth() {
 }
 alias sshealth=advHealth
 
-# Stackato v3
-# Usage: sl ship.org
-sl() {
-  stackato target https://api.paasv2.$1.mtnsatcloud.com --space ${CM_STACKATO_V3_SPACE} --organization ${CM_STACKATO_V3_ORG}
-  stackato login ${CM_STACKATO_V3_USER} --passwd ${CM_STACKATO_V3_PASS}
-}
-alias sl=sl
-
-alias sea1='sl sea1.mtn'
-alias sea2='sl sea2.mtn'
-alias sob='sl spiritofbritain1.pof'
-alias sof='sl spiritoffrance1.pof'
-alias pok='sl prideofkent1.pof'
-alias pob='sl prideofburgundy1.pof'
+alias sredis='stackato tunnel seanet_redis redis-cli'
