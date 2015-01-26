@@ -8,11 +8,16 @@ set autoread
 set updatetime=5000  " millisecond
 set modelines=1
 
+" check file change every 4 seconds ('CursorHold') and reload the buffer upon detecting change
+set autoread
+au CursorHold * checktime
+
 let mapleader = ","
 " vim
 nmap <leader>v :tabedit ~/.vimrc.local<CR>
 nmap <leader>n :set invnumber<CR>
 map <Leader>j :join<CR>
+map <leader>p <ESC>:set paste!<CR>
 " NERDTree
 map <Leader>d :NERDTreeToggle<CR>
 map <leader>D :NERDTree
