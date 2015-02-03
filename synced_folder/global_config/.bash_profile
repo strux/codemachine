@@ -105,6 +105,7 @@ alias sob='slv3 spiritofbritain1.pof'
 alias sof='slv3 spiritoffrance1.pof'
 alias pok='slv3 prideofkent1.pof'
 alias pob='slv3 prideofburgundy1.pof'
+alias poc='slv3 prideofcanterbury1.pof'
 
 # Expects an argument in the form of: magic1.dis OR se2.mtn
 advHealth() {
