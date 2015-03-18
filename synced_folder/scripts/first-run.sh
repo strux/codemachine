@@ -14,7 +14,7 @@ echo "It looks like this is your first time using codemachine."
 echo "Let's collect some info to help you get started."
 echo
 
-user_vars=$(find ~/synced_folder/ -maxdepth 2 -type f -exec grep -o 'CM_[_A-Z]\+' {} + | cut -d : -f 2 | sort | uniq)
+user_vars=$(find ~/synced_folder/ -maxdepth 2 -type f -exec grep -o 'CM_[_A-Z0-9]\+' {} + | cut -d : -f 2 | sort | uniq)
 for var in $user_vars
 do
   human=$(echo ${var} | sed 's/\(CM\)\?_/ /g')

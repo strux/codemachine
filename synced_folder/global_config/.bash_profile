@@ -81,15 +81,7 @@ slv3() {
 }
 alias slv3=slv3
 
-alias central='slv2 central.mtn'
-alias sea1v2='slv2 sea1.mtn'
-alias mia1v2='slv2 mia1.mtn'
-alias mia2v2='slv2 mia2.mtn'
-alias magicv2='slv2 magic1.dis'
-alias dreamv2='slv2 dream1.dis'
-alias wonderv2='slv2 wonder1.dis'
-alias fantasyv2='slv2 fantasy1.dis'
-alias breakawayv2='slv2 breakaway1.ncl'
+alias central='slv3 central.mtn'
 
 alias sea1='slv3 sea1.mtn'
 alias sea2='slv3 sea2.mtn'
@@ -106,6 +98,10 @@ alias sof='slv3 spiritoffrance1.pof'
 alias pok='slv3 prideofkent1.pof'
 alias pob='slv3 prideofburgundy1.pof'
 alias poc='slv3 prideofcanterbury1.pof'
+alias poh='slv3 prideofhull1.pof'
+alias por='slv3 prideofrotterdam1.pof'
+alias pobr='slv3 prideofbruges1.pof'
+alias poy='slv3 prideofyork1.pof'
 
 # Expects an argument in the form of: magic1.dis OR se2.mtn
 advHealth() {
