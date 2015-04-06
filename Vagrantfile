@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "hashicorp/precise32"
   config.vm.hostname = "codemachine"
   config.vm.provision :shell, path: "bootstrap.sh"
-  config.vm.synced_folder 'synced_folder', '/home/vagrant/synced_folder'
+  config.vm.synced_folder 'synced_folder', '/home/vagrant/synced_folder', type: 'nfs' 
 
   config.vm.provider "virtualbox" do |v|
     v.cpus = 1
@@ -22,6 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.ssh.forward_agent = true
 
+  config.vm.network "private_network", type: "dhcp"
   config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.network "forwarded_port", guest: 3000, host: 3000
   config.vm.network "forwarded_port", guest: 3030, host: 3030
