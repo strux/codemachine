@@ -81,9 +81,10 @@ sudo cp ${stackato_file}/stackato /usr/local/bin/
 rm -rf stackato*
 
 ################################################################################
-# spf-13
+# VIm 
 ################################################################################
-[[ ! $(readlink ~/.vimrc) == *spf13* ]] && curl http://j.mp/spf13-vim3 -L -o - | sh
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 ################################################################################
 # Next Steps
