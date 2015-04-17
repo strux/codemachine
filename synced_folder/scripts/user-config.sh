@@ -3,6 +3,11 @@
 set -x
 
 ################################################################################
+# Add a home bin
+################################################################################
+export PATH="$HOME/bin:$PATH"
+
+################################################################################
 # Dot files
 ################################################################################
 for f in ~/synced_folder/global_config/.*; do [ -f $f ] && ln -s $f ~/$(basename $f); done
@@ -45,6 +50,7 @@ do
   rbenv global ${ruby}
   # Bundler
   gem install bundler
+  gem install rake
   gem install debugger-ruby_core_source
   rbenv rehash
 done
@@ -55,7 +61,7 @@ done
 git clone git://github.com/github/hub.git
 cd hub
 git checkout origin/1.12-stable
-sudo rake install
+prefix='./bin' rake install
 cd ..
 rm -rf hub
 
