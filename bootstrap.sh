@@ -17,3 +17,6 @@ chmod +x /usr/local/bin/phantomjs
 rm -rf phantomjs*
 
 su -c "source /vagrant/synced_folder/scripts/user-config.sh" vagrant
+
+# Force rails server to run on public interface (not completely sure of consequences here)
+sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/hosts
