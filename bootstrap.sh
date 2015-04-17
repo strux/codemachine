@@ -6,7 +6,7 @@ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | 
 
 apt-get update
 apt-get install -y build-essential libreadline-dev libssl-dev zlib1g-dev libxml2-dev libyaml-dev libxslt-dev redis-server mongodb-10gen=2.4.11
-apt-get install -y curl wget unzip vim git git-core tmux ruby libsqlite3-dev libmysqlclient-dev nodejs libpq-dev
+apt-get install -y curl jshon wget unzip vim git git-core tmux ruby libsqlite3-dev libmysqlclient-dev nodejs libpq-dev postgresql postgresql-contrib
 
 # Phantomjs
 apt-get install libfontconfig1-dev
@@ -20,3 +20,6 @@ su -c "source /vagrant/synced_folder/scripts/user-config.sh" vagrant
 
 # Force rails server to run on public interface (not completely sure of consequences here)
 sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/hosts
+
+# Add vagrant user to postgres
+sudo -u postgres createuser -d vagrant
