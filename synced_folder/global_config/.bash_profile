@@ -104,10 +104,21 @@ alias pobr='slv3 prideofbruges1.pof'
 alias poy='slv3 prideofyork1.pof'
 
 # Expects an argument in the form of: magic1.dis OR se2.mtn
-advHealth() {
-  url="prod.seanet.$1.mtn.mtnsatcloud.com/status/zoo"
-  curl $url | jshon
+health() {
+  url="seanet.$1.mtnsatcloud.com/status/healthcheck"
+  curl -v $url | jshon
 }
-alias sshealth=advHealth
+alias seanetHealth=health
+
+advHealth() {
+  url="seanet.$1.mtnsatcloud.com/status/zoo"
+  curl -v $url | jshon
+}
+alias seanetZoo=advHealth
 
 alias sredis='stackato tunnel seanet_redis redis-cli'
+
+################################################################################
+# Docker
+################################################################################
+alias d='docker'
