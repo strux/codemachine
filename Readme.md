@@ -5,20 +5,20 @@ Codemachine is a Vagrant configured VM that is 100% ready and optimized for ruby
 
 Some notable out-of-the-box (pun) features include:
 
-1. spf-13 Ultimate Vim distribution
+1. Vim and all the best plugins for modern developement 
 1. tmux
 1. Custom hjkl tab/window bindings for vim and tmux
 1. Solarized theme configured for vim and OS X Terminal.app
 1. Common ruby version installed with rbenv
-1. git installed with helpful defaults
+1. Git installed with helpful defaults
 1. Git branch shown in prompt (git-prompt.sh)
-1. hub installed with tab completion and git alias
+1. Hub installed with tab completion and git alias
 1. Port forwarding for common dev ports (3000,3030,4567,etc)
 1. Javascript runtime (nodejs)
 1. Common build tools installed
 1. Custom prompt so you don't forget where you are
 1. Interactive script to collect profile information
-1. lots more...
+1. Lots more...
 
 ## Prerequisites ##
 
