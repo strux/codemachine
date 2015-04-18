@@ -25,6 +25,9 @@ set hlsearch
 set diffopt=vertical
 set modelines=1
 set laststatus=2 	     " required for airline
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
 
 syntax enable
 set background=dark
