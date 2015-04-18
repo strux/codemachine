@@ -16,10 +16,17 @@ cp phantomjs-1.9.8-linux-i686/bin/phantomjs /usr/local/bin/
 chmod +x /usr/local/bin/phantomjs
 rm -rf phantomjs*
 
-su -c "source /vagrant/synced_folder/scripts/user-config.sh" vagrant
+# Hub
+wget https://github.com/github/hub/releases/download/v2.2.1/hub-linux-386-2.2.1.tar.gz
+tar -xf hub-linux-386-2.2.1.tar.gz
+cp hub-linux-386-2.2.1/hub /usr/local/bin/
+chmod +x /usr/local/bin/hub
+rm -rf hub*
 
 # Force rails server to run on public interface (not completely sure of consequences here)
 sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/hosts
 
 # Add vagrant user to postgres
 sudo -u postgres createuser -d vagrant
+
+su -c "source /vagrant/synced_folder/scripts/user-config.sh" vagrant
