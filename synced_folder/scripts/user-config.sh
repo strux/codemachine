@@ -69,6 +69,7 @@ rm -rf stackato*
 # VIm 
 ################################################################################
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+mkdir ~/.vim/backup/ ~/.vim/swap/ ~/.vim/undo/
 vim +PluginInstall +qall
 
 ################################################################################
