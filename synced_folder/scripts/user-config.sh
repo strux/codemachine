@@ -47,6 +47,7 @@ do
   gem install bundler
   gem install rake
   gem install debugger-ruby_core_source
+  gem install tmuxinator  -v 0.6.9
   rbenv rehash
 done
 
