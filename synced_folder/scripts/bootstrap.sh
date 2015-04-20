@@ -6,7 +6,7 @@ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | 
 
 apt-get update
 apt-get install -y build-essential libreadline-dev libssl-dev zlib1g-dev libxml2-dev libyaml-dev libxslt-dev redis-server mongodb-10gen=2.4.11
-apt-get install -y curl jshon wget unzip vim vim-nox git git-core tmux ruby libsqlite3-dev libmysqlclient-dev nodejs libpq-dev postgresql postgresql-contrib
+apt-get install -y curl jshon wget unzip vim vim-nox silversearcher-ag git git-core tmux ruby libsqlite3-dev libmysqlclient-dev nodejs libpq-dev postgresql postgresql-contrib
 
 # Phantomjs
 apt-get install libfontconfig1-dev

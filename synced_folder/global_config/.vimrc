@@ -16,6 +16,7 @@ call vundle#begin()
   Plugin 'altercation/vim-colors-solarized'
   Plugin 'Shougo/neocomplete.vim'
   Plugin 'vim-ruby/vim-ruby'
+  Plugin 'rking/ag.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
