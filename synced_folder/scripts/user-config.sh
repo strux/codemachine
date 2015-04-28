@@ -57,16 +57,6 @@ done
 set +x
 
 ################################################################################
-# Stackato
-################################################################################
-stackato_version=3.2.0
-stackato_file=stackato-${stackato_version}-linux-glibc2.3-ix86
-wget http://downloads.activestate.com/stackato/client/v${stackato_version}/${stackato_file}.zip
-unzip ${stackato_file}.zip
-sudo cp ${stackato_file}/stackato /usr/local/bin/
-rm -rf stackato*
-
-################################################################################
 # VIm 
 ################################################################################
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
