@@ -1,5 +1,5 @@
 "=========================
-" Vundle Plugins 
+" Vundle Plugins
 "=========================
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -22,13 +22,17 @@ filetype plugin indent on    " required
 
 set number
 set ts=2 sts=2 sw=2 expandtab
+set visualbell
 set hlsearch
+set incsearch
 set diffopt=vertical
 set modelines=1
-set laststatus=2 	     " required for airline
+set laststatus=2 " required for airline
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
+set list
+set listchars=tab:▸\ ,trail:.
 
 syntax enable
 set background=dark
@@ -66,7 +70,7 @@ let NERDTreeIgnore = ['\.DS_Store', '\.idea', '\.git']
 map <Leader>d :NERDTreeToggle<CR>
 
 "-------------------------
-" Fugitive 
+" Fugitive
 "-------------------------
 map <leader>gs <ESC>:Gstatus<CR>
 map <leader>gd <ESC>:Gdiff<CR>
@@ -80,6 +84,7 @@ map <leader>gw <ESC>:Gwrite<CR>
 " Auto-complete
 "-------------------------
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 
@@ -90,7 +95,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 "-------------------------
-" Tabs and Windows 
+" Tabs and Windows
 "-------------------------
 " Tabs
 map <C-l> gt
@@ -110,7 +115,7 @@ map ˚ :resize +5<CR>
 map ∆ :resize -5<CR>
 
 "=========================
-" Auto reload .vimrc 
+" Auto reload .vimrc
 "=========================
 if has('autocmd')
   " Source .vimrc when I write it.  The nested keyword allows
