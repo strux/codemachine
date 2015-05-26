@@ -23,8 +23,10 @@ filetype plugin indent on    " required
 set number
 set ts=2 sts=2 sw=2 expandtab
 set visualbell
+set splitright
 set hlsearch
 set incsearch
+set ignorecase " ignore case in search
 set diffopt=vertical
 set modelines=1
 set laststatus=2 " required for airline
@@ -33,6 +35,7 @@ set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 set list
 set listchars=tab:▸\ ,trail:.
+set spell spelllang=en_us
 
 syntax enable
 set background=dark
@@ -93,6 +96,13 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
+
+"-------------------------
+" Ag
+"-------------------------
+map <Leader>f <ESC>:tabnew<CR>:Ag 
+map <Leader>F <ESC>:Ag 
 
 "-------------------------
 " Tabs and Windows
