@@ -11,8 +11,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder 'synced_folder', '/home/vagrant/synced_folder', type: 'nfs' 
 
   config.vm.provider "virtualbox" do |v|
-    v.cpus = 1
-    v.customize ["modifyvm", :id, "--cpuexecutioncap", "60"]
+    v.cpus = 2
+    v.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
     v.memory = 4096 
     v.customize ["modifyvm", :id,  "--natdnsproxy1", "off"]
     v.customize ["modifyvm", :id,  "--natdnshostresolver1", "off"]
